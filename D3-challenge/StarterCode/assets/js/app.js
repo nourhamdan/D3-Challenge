@@ -124,14 +124,14 @@ d3.csv("assets/data/data.csv").then(function(data) {
 
     var ageLabel = xlabelsGroup.append("text")
         .attr("x", 0)
-        .attr("y", 60)
+        .attr("y", 80)
         .attr("value", "age") 
         .text("Age (Median)")
         .classed("inactive", true);
 
     var incomeLabel = xlabelsGroup.append("text")
         .attr("x", 0)
-        .attr("y", 80)
+        .attr("y", 60)
         .attr("value", "income") 
         .text("Income (Median)")
         .classed("inactive", true);
@@ -146,7 +146,22 @@ d3.csv("assets/data/data.csv").then(function(data) {
         .attr("value", "healthcare")
         .text("Healthcare (%)")
         .classed("active", true);
-    
+        var obeseLabel = ylabelsGroup.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -(chartHeight / 2))
+        .attr("y", -60)
+        .attr("value", "obesity") 
+        .text("Obeseness (%)")
+        .classed("inactive", true);
+        
+        var smokesLabel = ylabelsGroup.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -(chartHeight / 2))
+        .attr("y", -80)
+        .attr("value", "smokes")
+        .text("Smokes (%)")
+        .classed("inactive", true);
+
     // Append a group area, then set its margins
     var statsGroup = svg2.selectAll("text")
         .data([1])
